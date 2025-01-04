@@ -6,6 +6,7 @@ Endpoint for registering new users in the system.
 ### Endpoint
 ```
 POST /users/register
+http://localhost:8001/users/register
 ```
 
 ### Description
