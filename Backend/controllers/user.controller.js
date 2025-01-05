@@ -10,6 +10,10 @@ module.exports.registerUser=async (req,res)=>{
         return res.status(400).json({errors:errors.array()});
     }
       const {fullname,email,password}=req.body;
+    const existingUser = await userModel.findOne({ email });
+    if (existingUser) {
+        return res.status(400).json({ message: 'Email already exist' });
+    }
       
       const hashedPassword=await userModel.hashPassword(password);
         const user=await userServices.createUser({
@@ -20,7 +24,7 @@ module.exports.registerUser=async (req,res)=>{
         });
 
         const token=user.generateAuthToken();
-        res.cookie('token',token, { httpOnly: true });
+        res.cookie('token',token);
         res.status(201).json({user,token});
     }catch(error){
         res.status(400).send(error.message);
