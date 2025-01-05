@@ -77,3 +77,69 @@ Creates a new user account with the provided information. Passwords are automati
     ]
 }
 ```
+
+## User Login
+Endpoint for logging in users.
+
+### Endpoint
+```
+POST /users/login
+http://localhost:8001/users/login
+```
+
+### Description
+Logs in a user with the provided email and password.
+
+### Request Body
+```json
+{
+    "email": "string",
+    "password": "string"
+}
+```
+
+### Required Fields
+- `email`: Valid email address
+- `password`: Password (minimum 6 characters)
+
+### Response Codes
+- `200`: User successfully logged in
+- `400`: Invalid request body or validation error
+- `401`: Invalid email or password
+- `500`: Server error
+
+### Example Response
+```json
+{
+    "user": {
+        "fullname": {
+            "firstname": "string",
+            "lastname": "string"
+        },
+        "email": "string",
+        "password": "string",
+        "socketId": "",
+        "_id": "string",
+        "date": "string",
+        "__v": 0
+    },
+    "token": "string"
+}
+```
+
+### Error Response
+```json
+{
+    "errors": [
+        {
+            "msg": "Invalid email address",
+            "param": "email",
+            "location": "body"
+        },
+        {
+            "msg": "Password must be at least 6 characters",
+            "param": "password",
+            "location": "body"
+        }
+    ]
+}
