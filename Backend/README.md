@@ -143,3 +143,66 @@ Logs in a user with the provided email and password.
         }
     ]
 }
+```
+
+## Get User Profile
+Endpoint for retrieving the logged-in user's profile.
+
+### Endpoint
+```
+GET /users/profile
+http://localhost:8001/users/profile
+```
+
+### Description
+Retrieves the profile information of the currently authenticated user.
+
+### Headers
+- `Authorization`: Bearer token (if not using cookies)
+
+### Response Codes
+- `200`: User profile successfully retrieved
+- `401`: Unauthorized (invalid or missing token)
+- `500`: Server error
+
+### Example Response
+```json
+{
+    "fullname": {
+        "firstname": "string",
+        "lastname": "string"
+    },
+    "email": "string",
+    "socketId": "",
+    "_id": "string",
+    "date": "string",
+    "__v": 0
+}
+```
+
+## User Logout
+Endpoint for logging out the user.
+
+### Endpoint
+```
+GET /users/logout
+http://localhost:8001/users/logout
+```
+
+### Description
+Logs out the currently authenticated user by clearing the authentication token and blacklisting it.
+
+### Headers
+- `Authorization`: Bearer token (if not using cookies)
+
+### Response Codes
+- `200`: User successfully logged out
+- `401`: Unauthorized (invalid or missing token)
+- `500`: Server error
+
+### Example Response
+```json
+{
+    "message": "Logged out successfully"
+}
+```
