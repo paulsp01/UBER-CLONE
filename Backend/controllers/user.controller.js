@@ -49,3 +49,15 @@ module.exports.loginUser=async (req,res)=>{
     }
 }
 
+// module.exports.getUserProfile = async (req, res) => {
+//     try {
+//         const userId = req.user.id;
+//         const user = await userModel.findById(userId).select('-password');
+//         if (!user) {
+//             return res.status(404).json({ message: 'User not found' });
+//         }
+//         res.status(200).json(user);
+//     } catch (error) {
+//         res.status(400).send(error.message);
+//     }
+// }
