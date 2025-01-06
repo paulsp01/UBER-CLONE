@@ -190,6 +190,145 @@ Creates a new captain account with the provided information. Passwords are autom
 }
 ```
 
+## Captain Login
+
+### Endpoint
+```
+POST /captains/login
+http://localhost:8001/captains/login
+```
+
+### Description
+Logs in a captain with the provided email and password.
+
+### Request Body
+```json
+{
+    "email": "string",
+    "password": "string"
+}
+```
+
+### Required Fields
+- `email`: Valid email address
+- `password`: Password (minimum 6 characters)
+
+### Response Codes
+- `200`: Captain successfully logged in
+- `400`: Invalid request body or validation error
+- `401`: Invalid email or password
+- `500`: Server error
+
+### Example Response
+```json
+{
+    "captain": {
+        "fullname": {
+            "firstname": "string",
+            "lastname": "string"
+        },
+        "email": "string",
+        "vehicle": {
+            "color": "string",
+            "plate": "string",
+            "capacity": 1,
+            "vechiletype": "string"
+        },
+        "socketId": "",
+        "_id": "string",
+        "date": "string",
+        "__v": 0
+    },
+    "token": "string"
+}
+```
+
+### Error Response
+```json
+{
+    "errors": [
+        {
+            "msg": "Invalid email address",
+            "param": "email",
+            "location": "body"
+        },
+        {
+            "msg": "Password must be at least 6 characters",
+            "param": "password",
+            "location": "body"
+        }
+    ]
+}
+```
+
+## Get Captain Profile
+Endpoint for retrieving the logged-in captain's profile.
+
+### Endpoint
+```
+GET /captains/profile
+http://localhost:8001/captains/profile
+```
+
+### Description
+Retrieves the profile information of the currently authenticated captain.
+
+### Headers
+- `Authorization`: Bearer token (if not using cookies)
+
+### Response Codes
+- `200`: Captain profile successfully retrieved
+- `401`: Unauthorized (invalid or missing token)
+- `500`: Server error
+
+### Example Response
+```json
+{
+    "fullname": {
+        "firstname": "string",
+        "lastname": "string"
+    },
+    "email": "string",
+    "vehicle": {
+        "color": "string",
+        "plate": "string",
+        "capacity": 1,
+        "vechiletype": "string"
+    },
+    "socketId": "",
+    "_id": "string",
+    "date": "string",
+    "__v": 0
+}
+```
+
+## Captain Logout
+Endpoint for logging out the captain.
+
+### Endpoint
+```
+GET /captains/logout
+http://localhost:8001/captains/logout
+```
+
+### Description
+Logs out the currently authenticated captain by clearing the authentication token and blacklisting it.
+
+### Headers
+- `Authorization`: Bearer token (if not using cookies)
+
+### Response Codes
+- `200`: Captain successfully logged out
+- `401`: Unauthorized (invalid or missing token)
+- `500`: Server error
+
+### Example Response
+```json
+{
+    "message": "Logged out successfully"
+}
+```
+
 ## User Login
 Endpoint for logging in users.
 
