@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { Link } from "react-router-dom"
-
+import { Link,useNavigate } from "react-router-dom"
+import axios from "axios"
+import { CaptainDataContext } from "../context/CaptainContext"
 
 const Captainlogin = () => {
  const [email, setEmail] = useState("")
@@ -8,14 +9,28 @@ const Captainlogin = () => {
  const [captainData, setcaptainData]  = useState({})
  
  
- 
+ const navigate = useNavigate()
+      const { captain, setCaptain } = React.useContext(CaptainDataContext)
 
- const submitHandler=(e) => {
+ const submitHandler=async (e) => {
   e.preventDefault()
-  setcaptainData({
+  const captainData={
     email: email,
     password: password,
-  })
+  }
+
+
+  try {
+    const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/captains/login`, captainData)
+    if (response.status === 200) {
+      const data = response.data
+      setCaptain(data.captain)
+      localStorage.setItem("token", data.token)
+      navigate("/captain-hero")
+    }
+  } catch (error) {
+    console.error("Error creating account:", error.response ? error.response.data : error.message)
+  }
   
   setEmail("")
   setPassword("")
