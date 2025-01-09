@@ -1,0 +1,56 @@
+import React from 'react'
+
+const WaitforDriver = (props) => {
+  return (
+    <div>
+    <h5 
+   onClick={()=>{
+     props.setWaitingfordriver(false)
+   }}
+   className='py-2 pb-4 text-center absolute w-full top-0  text-3xl text-gray-500  '><i className="ri-arrow-down-wide-line"></i></h5>
+
+
+   <div className='flex items-center justify-between'>
+   <img className='h-10 ' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrgwwulhOQCTSH_edb6mScPGpFkSRvOrGziQ&s" alt=""/>
+   <div className='px-5 text-right'>
+    <h2 className='text-xl font-medium'>Samir</h2>
+    <h4 className='text-2xl font-semibold -mt-1 -mb-1'>A05D AB 123</h4>
+    <p className='text-lg text-gray-800'>Maruti suzuki</p>
+   </div>
+   </div>
+
+ 
+ <div className='flex justify-between items-center flex-col gap-3'>
+ 
+ <div className='w-full mt-5'>
+   <div className='flex justify-start items-center gap-5 py-3 border-b-2'>
+       <h5 className=' text-2xl'><i className="ri-map-pin-fill"></i></h5>
+       <div className=''>
+           <h3 className='text-xl font-semibold'>562/1-A</h3>
+           <p className='text-gray-800'>Karnataka,Amedabad,USA</p>
+
+       </div>
+
+   </div>
+   <div className='flex justify-start items-center gap-5 py-3 border-b-2'>
+
+   <h5 className=' text-2xl'><i className="ri-square-fill"></i></h5>
+       <div className=''>
+           <h3 className='text-xl font-semibold'>Third Wave Cofee </h3>
+           <p className='text-gray-800'>Karnataka,Amedabad,USA</p>
+
+       </div>
+
+       
+
+   </div>
+  
+
+ </div>
+ 
+ </div>
+</div>
+  )
+}
+
+export default WaitforDriver
