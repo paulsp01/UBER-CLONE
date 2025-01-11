@@ -140,7 +140,7 @@ const CaptainSignup = () => {
               <option value='Motorcycle'>Motorcycle</option>
             </select>
           </div>
-          <button className='bg-[#111] text-white font-semibold mb-3 rounded-md px-4 py-2 w-full text-lg placeholder:text-sm'>Create Account</button>
+          <button className='bg-amber-600 text-white font-semibold mb-3 rounded-md px-4 py-2 w-full text-lg placeholder:text-sm'>Create Account</button>
         </form>
         <p className='text-center mb-8'>Already have an account?{" "}<Link to='/captain-login' className='text-blue-600 '>Go To Login</Link> </p>
       </div>
