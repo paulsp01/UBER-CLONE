@@ -457,3 +457,149 @@ Logs out the currently authenticated user by clearing the authentication token a
     "message": "Logged out successfully"
 }
 ```
+
+## Ride Routes
+
+### Create Ride
+```
+POST /rides/create
+http://localhost:8001/rides/create
+```
+Creates a new ride.
+
+#### Request Body
+```json
+{
+    "pickup": "string",
+    "destination": "string",
+    "vehicleType": "string"
+}
+```
+- `pickup`: Pickup address (minimum 3 characters)
+- `destination`: Destination address (minimum 3 characters)
+- `vehicleType`: Vehicle type (must be one of 'auto', 'car', 'moto')
+
+#### Response Codes
+- `201`: Ride successfully created
+- `400`: Invalid request body or validation error
+- `500`: Server error
+
+### Get Fare
+```
+GET /rides/get-fare
+http://localhost:8001/rides/get-fare
+```
+Gets the fare for a ride.
+
+#### Query Parameters
+- `pickup`: Pickup address (minimum 3 characters)
+- `destination`: Destination address (minimum 3 characters)
+
+#### Response Codes
+- `200`: Fare successfully retrieved
+- `400`: Invalid query parameters or validation error
+- `500`: Server error
+
+### Confirm Ride
+```
+POST /rides/confirm
+http://localhost:8001/rides/confirm
+```
+Confirms a ride.
+
+#### Request Body
+```json
+{
+    "rideId": "string"
+}
+```
+- `rideId`: Ride ID (must be a valid MongoDB ObjectId)
+
+#### Response Codes
+- `200`: Ride successfully confirmed
+- `400`: Invalid request body or validation error
+- `500`: Server error
+
+### Start Ride
+```
+GET /rides/start-ride
+http://localhost:8001/rides/start-ride
+```
+Starts a ride.
+
+#### Query Parameters
+- `rideId`: Ride ID (must be a valid MongoDB ObjectId)
+- `otp`: OTP (must be 6 characters)
+
+#### Response Codes
+- `200`: Ride successfully started
+- `400`: Invalid query parameters or validation error
+- `500`: Server error
+
+### End Ride
+```
+POST /rides/end-ride
+http://localhost:8001/rides/end-ride
+```
+Ends a ride.
+
+#### Request Body
+```json
+{
+    "rideId": "string"
+}
+```
+- `rideId`: Ride ID (must be a valid MongoDB ObjectId)
+
+#### Response Codes
+- `200`: Ride successfully ended
+- `400`: Invalid request body or validation error
+- `500`: Server error
+
+## Maps Routes
+
+### Get Coordinates
+```
+GET /maps/get-coordinates
+http://localhost:8001/maps/get-coordinates
+```
+Gets the coordinates for an address.
+
+#### Query Parameters
+- `address`: Address (minimum 3 characters)
+
+#### Response Codes
+- `200`: Coordinates successfully retrieved
+- `400`: Invalid query parameters or validation error
+- `500`: Server error
+
+### Get Distance and Time
+```
+GET /maps/get-distance-time
+http://localhost:8001/maps/get-distance-time
+```
+Gets the distance and time between two locations.
+
+#### Query Parameters
+- `origin`: Origin address (minimum 3 characters)
+- `destination`: Destination address (minimum 3 characters)
+
+#### Response Codes
+- `200`: Distance and time successfully retrieved
+- `400`: Invalid query parameters or validation error
+- `500`: Server error
+
+### Get AutoComplete Suggestions
+```
+GET /maps/get-suggestions
+http://localhost:8001/maps/get-suggestions
+```
+Gets autocomplete suggestions for an input.
+
+#### Query Parameters
+- `input`: Input string (minimum 3 characters)
+
+#### Response Codes
+- `200`: Suggestions successfully retrieved
+- `400`: Invalid query parameters or validation error
+- `500`: Server error
