@@ -34,7 +34,7 @@ const UserProtectedWrapper = ({ children }) => {
       Authorization: `Bearer ${token}`
     }
   }).then(response => {
-    setUser(response.data.user)
+    setUser(response.data)
     setIsLoading(false)
   }).catch(() => {
     console.error("Error logging out:", error.response ? error.response.data : error.message)

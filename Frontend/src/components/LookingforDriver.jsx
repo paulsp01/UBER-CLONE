@@ -17,7 +17,7 @@ const LookingforDriver = (props) => {
        <h5 className=' text-2xl'><i className="ri-map-pin-fill"></i></h5>
        <div className=''>
            <h3 className='text-xl font-semibold'>562/1-A</h3>
-           <p className='text-gray-800'>Karnataka,Amedabad,USA</p>
+           <p className='text-gray-800'>{props.pickup}</p>
 
        </div>
 
@@ -26,7 +26,7 @@ const LookingforDriver = (props) => {
 
    <h5 className=' text-2xl'><i className="ri-square-fill"></i></h5>
        <div className=''>
-           <h3 className='text-xl font-semibold'>Third Wave Cofee </h3>
+           <h3 className='text-xl font-semibold'>{props.destination} </h3>
            <p className='text-gray-800'>Karnataka,Amedabad,USA</p>
 
        </div>
@@ -38,7 +38,7 @@ const LookingforDriver = (props) => {
 
    <h5 className=' text-2xl'><i className="ri-wallet-2-fill"></i></h5>
        <div className=''>
-           <h3 className='text-xl font-semibold'>193.20</h3>
+           <h3 className='text-xl font-semibold'>₹{props.fare[ props.vehicleType ]}</h3>
            <p className='text-gray-800'>Cash Cash</p>
 
        </div>

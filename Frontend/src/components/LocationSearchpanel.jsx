@@ -1,36 +1,31 @@
 import React from 'react'
 import 'remixicon/fonts/remixicon.css'
 
-const LocationSearchpanel = (props) => {
-  const locations = [
-    "123 Main St, Springfield,MyntraCafe,near shoe shop, USA",
-    "456 Elm St, Springfield,Shinghnia Cafe,near Remon's shop USA",
-    "789 Oak St, Springfield, USA",
-    "101 Maple St, Springfield, USA"
-  ]
+const LocationSearchpanel = ({ suggestions, setVpanelopen, setPanelopen, setPickup, setDestination, activeField }) => {
+  
+
+
+  const handleSuggestionClick = (suggestion) => {
+    if (activeField === 'pickup') {
+        setPickup(suggestion)
+    } else if (activeField === 'destination') {
+        setDestination(suggestion)
+    }
+    // setVehiclePanel(true)
+    // setPanelOpen(false)
+}
   return (
 
     <div >
       
       {
-        locations.map( (location,idx)=>{
-          return (
-             <div 
-             key={idx}
-             onClick={()=>{
-             props.setVpanelopen(true)
-             props.setPanelopen(false)
-             }}
-              className='flex  items-center justify-start gap-3 my-2 hover:border-2 active:border-black rounded-xl p-2'>
-      <h2 className='px-2 '><i className="ri-map-pin-fill text-lg"></i></h2>
-      <h4 className='font-medium'>{location}</h4>
-      </div>
-          )
-           
-
-          
-        })
-      }
+                suggestions.map((elem, idx) => (
+                    <div key={idx} onClick={() => handleSuggestionClick(elem)} className='flex gap-4 border-2 p-3 border-gray-50 active:border-black rounded-xl items-center my-2 justify-start'>
+                        <h2 className='bg-[#eee] h-8 flex items-center justify-center w-12 rounded-full'><i className="ri-map-pin-fill"></i></h2>
+                        <h4 className='font-medium'>{elem}</h4>
+                    </div>
+                ))
+            }
 
 
 

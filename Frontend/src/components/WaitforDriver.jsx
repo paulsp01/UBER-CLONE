@@ -13,9 +13,10 @@ const WaitforDriver = (props) => {
    <div className='flex items-center justify-between'>
    <img className='h-10 ' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrgwwulhOQCTSH_edb6mScPGpFkSRvOrGziQ&s" alt=""/>
    <div className='px-5 text-right'>
-    <h2 className='text-xl font-medium'>Samir</h2>
-    <h4 className='text-2xl font-semibold -mt-1 -mb-1'>A05D AB 123</h4>
+    <h2 className='text-xl font-medium capitalize'>{props.ride?.captain.fullname.firstname}</h2>
+    <h4 className='text-2xl font-semibold -mt-1 -mb-1'>{props.ride?.captain.vehicle.plate}</h4>
     <p className='text-lg text-gray-800'>Maruti suzuki</p>
+    <h1 className='text-lg font-semibold'>  {props.ride?.otp} </h1>
    </div>
    </div>
 
@@ -27,7 +28,7 @@ const WaitforDriver = (props) => {
        <h5 className=' text-2xl'><i className="ri-map-pin-fill"></i></h5>
        <div className=''>
            <h3 className='text-xl font-semibold'>562/1-A</h3>
-           <p className='text-gray-800'>Karnataka,Amedabad,USA</p>
+           <p className='text-gray-800'>{props.ride?.pickup}</p>
 
        </div>
 
@@ -37,7 +38,7 @@ const WaitforDriver = (props) => {
    <h5 className=' text-2xl'><i className="ri-square-fill"></i></h5>
        <div className=''>
            <h3 className='text-xl font-semibold'>Third Wave Cofee </h3>
-           <p className='text-gray-800'>Karnataka,Amedabad,USA</p>
+           <p className='text-gray-800'>{props.ride?.destination}</p>
 
        </div>
 

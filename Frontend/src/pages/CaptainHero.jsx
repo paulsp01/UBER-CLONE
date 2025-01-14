@@ -1,17 +1,22 @@
-import React, { useRef,useState } from 'react'
+import React, { useRef,useState,useContext,useEffect } from 'react'
 import { Link } from "react-router-dom"
 import CaptainDetails from '../components/CaptainDetails'
 import RidePopup from '../components/RidePopup'
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import ConfirmRidePopup from '../components/ConfirmRidePopup'
+import {CaptainDataContext} from "../context/CaptainContext"
+import {SocketContextProvider} from "../context/SocketContext"
 
 const CaptainHero = () => {
-const [ridePopup, setRidePopup] = useState(true)
+const [ridePopup, setRidePopup] = useState(false)
 const ridepopupRef=useRef(null)
 const [confirmridepopup, setconfirmridepopup] = useState(false)
 const confirmridepopupRef=useRef(null)
+const [ ride, setRide ] = useState(null)
 
+const { socket } = useContext(SocketContextProvider)
+const { captain } = useContext(CaptainDataContext)
 
 useGSAP(()=>{
   if(ridePopup) {
@@ -38,6 +43,60 @@ useGSAP(()=>{
  },[confirmridepopup])
 
 
+ useEffect(() => {
+  socket.emit('join', {
+      userId: captain._id,
+      userType: 'captain'
+  })
+
+
+
+  const updateLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+
+          socket.emit('update-location-captain', {
+              userId: captain._id,
+              location: {
+                  ltd: position.coords.latitude,
+                  lng: position.coords.longitude
+              }
+          })
+      })
+  }
+  }
+
+  const locationInterval = setInterval(updateLocation, 10000)
+  updateLocation()
+
+  // return () => clearInterval(locationInterval)
+}, [])
+
+socket.on('new-ride', (data) => {
+
+  setRide(data)
+  setRidePopup(true)
+
+})
+
+async function confirmRide() {
+  
+  const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/rides/confirm`, {
+
+    rideId: ride._id,
+    captainId: captain._id,
+
+
+}, {
+    headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+    }
+})
+
+setRidePopup(false)
+setconfirmridepopup(true)
+}
+
 
   return (
     <div className='h-screen '>
@@ -48,18 +107,21 @@ useGSAP(()=>{
     </Link>
    </div>
     <div className="h-[65%] ">
-      <img className="h-full object-cover" src='https://www.researchgate.net/publication/323759986/figure/fig3/AS:631576123682823@1527590890164/Map-in-Uber-application-tracking-user-in-a-Yellow-Cab.png' alt='' />
+    <LiveTracking/>
     </div>
     <div className='h-[35%] px-5 py-5 '>
      <CaptainDetails/>
     </div>
    
     <div ref={ridepopupRef} className='fixed w-full z-10 bottom-0 p-3 translate-y-full  bg-white py-10'>
-      <RidePopup  setconfirmridepopup={setconfirmridepopup} setRidePopup={setRidePopup}/>
+      <RidePopup
+        ride={ride}
+        confirmRide={confirmRide}
+        setconfirmridepopup={setconfirmridepopup} setRidePopup={setRidePopup}/>
       </div>
 
       <div ref={confirmridepopupRef} className='fixed w-full h-screen z-10 bottom-0 p-3 translate-y-full  bg-white py-10'>
-      <ConfirmRidePopup  setconfirmridepopup={setconfirmridepopup} setRidePopup={setRidePopup}/>
+      <ConfirmRidePopup  ride={ride} setconfirmridepopup={setconfirmridepopup} setRidePopup={setRidePopup}/>
       </div>
     
   </div>

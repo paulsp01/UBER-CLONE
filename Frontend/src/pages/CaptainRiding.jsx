@@ -1,13 +1,15 @@
 import React,{useState,useRef} from 'react'
-import { Link } from "react-router-dom"
+import { Link,useLocation  } from "react-router-dom"
 import FinishRide from '../components/FinishRide'
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
+import LiveTracking from "../components/LiveTracking"
 
 const CaptainRiding = () => {
 const [finishRide, setFinishRide] = useState(false)
 const finishRideRef = useRef(null)
-
+const location = useLocation()
+const rideData = location.state?.ride
 
 
 
@@ -34,11 +36,11 @@ const finishRideRef = useRef(null)
      </Link>
     </div>
      <div className="h-[80%] ">
-       <img className="h-full object-cover" src='https://www.researchgate.net/publication/323759986/figure/fig3/AS:631576123682823@1527590890164/Map-in-Uber-application-tracking-user-in-a-Yellow-Cab.png' alt='' />
+      <LiveTracking/>
      </div>
      <div 
      onClick={()=>{
-          
+      setFinishRide(true)
      }}
      
      className='h-[20%] px-5 py-4 bg-amber-400  relative '>
@@ -65,7 +67,7 @@ const finishRideRef = useRef(null)
      </div>
     
      <div ref={finishRideRef} className='fixed w-full z-10 bottom-0 p-3 translate-y-full  bg-white py-10'>
-      <FinishRide  setFinishRide={setFinishRide} />
+      <FinishRide   ride={rideData} setFinishRide={setFinishRide} />
       </div>
      
    </div>
