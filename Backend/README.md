@@ -477,7 +477,7 @@ Creates a new ride.
 ```
 - `pickup`: Pickup address (minimum 3 characters)
 - `destination`: Destination address (minimum 3 characters)
-- `vehicleType`: Vehicle type (must be one of 'auto', 'car', 'moto')
+- `vehicleType`: Vehicle type (must be one of 'auto', 'car', 'motorcycle')
 
 #### Response Codes
 - `201`: Ride successfully created
