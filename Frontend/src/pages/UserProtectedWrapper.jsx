@@ -24,23 +24,22 @@ const UserProtectedWrapper = ({ children }) => {
     if (!token) {
       navigate("/login")
     } 
-      
-    
   }, [token, navigate])
 
-
-  axios.get(`${import.meta.env.VITE_BASE_URL}/users/profile`, {
-    headers: {
-      Authorization: `Bearer ${token}`
-    }
-  }).then(response => {
-    setUser(response.data)
-    setIsLoading(false)
-  }).catch(() => {
-    console.error("Error logging out:", error.response ? error.response.data : error.message)
-    localStorage.removeItem("token")
-    navigate("/login")
-  })
+  useEffect(() => {
+    axios.get(`${import.meta.env.VITE_BASE_URL}/users/profile`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    }).then(response => {
+      setUser(response.data)
+      setIsLoading(false)
+    }).catch((error) => {
+      console.error("Error logging out:", error.response ? error.response.data : error.message)
+      localStorage.removeItem("token")
+      navigate("/login")
+    })
+  }, [token, navigate, setUser])
 
   if (isLoading) {
     return <div>Loading...</div>

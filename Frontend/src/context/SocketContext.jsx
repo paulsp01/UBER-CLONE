@@ -18,6 +18,9 @@ const SocketContext = ({children}) => {
 
     }, []);
 
+
+   
+
   return (
     <SocketContextProvider.Provider value={{ socket }}>
     {children}

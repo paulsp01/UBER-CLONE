@@ -37,6 +37,7 @@ const rideData = location.state?.ride
     </div>
      <div className="h-[80%] ">
       <LiveTracking/>
+      
      </div>
      <div 
      onClick={()=>{
@@ -65,6 +66,7 @@ const rideData = location.state?.ride
        
      
      </div>
+    
     
      <div ref={finishRideRef} className='fixed w-full z-10 bottom-0 p-3 translate-y-full  bg-white py-10'>
       <FinishRide   ride={rideData} setFinishRide={setFinishRide} />

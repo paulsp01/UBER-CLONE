@@ -240,9 +240,9 @@ async function createRide() {
             <input type="text"
               onClick={() => {
                 setPanelopen(true)
-                onChange={handlePickupChange}
-              }}
-              value={destination}
+                setActiveField('destination')
+            }}
+            value={destination}
               // onChange={(e) => {
               //   setDestination(e.target.value)
               // }}

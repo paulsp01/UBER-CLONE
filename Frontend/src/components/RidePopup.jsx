@@ -38,7 +38,8 @@ const RidePopup = (props) => {
         <div className='flex justify-start items-center gap-5 py-3 border-b-2'>
             <h5 className=' text-2xl'><i className="ri-map-pin-fill"></i></h5>
             <div className=''>
-                <h3 className='text-lg font-semibold'>562/1-A</h3>
+                <h3 className='text-lg font-semibold'>{props.ride?.pickup?.split(',')[0]}
+                </h3>
                 <p className='text-gray-800 text-sm'>{props.ride?.pickup}</p>
 
             </div>
@@ -48,7 +49,8 @@ const RidePopup = (props) => {
 
         <h5 className=' text-2xl'><i className="ri-square-fill"></i></h5>
             <div className=''>
-                <h3 className='text-lg font-semibold'>Third Wave Cofee </h3>
+                <h3 className='text-lg font-semibold'>{props.ride?.destination?.split(',')[0]}
+                </h3>
                 <p className='text-gray-800 text-sm'>{props.ride?.destination}</p>
 
             </div>

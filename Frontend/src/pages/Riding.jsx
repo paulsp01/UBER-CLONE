@@ -42,14 +42,14 @@ const Riding = () => {
             <div className='flex justify-start items-center gap-5 py-2 border-b-2'>
               <h5 className='text-lg'><i className="ri-map-pin-fill"></i></h5>
               <div>
-                <h3 className='text-base font-semibold'>562/1-A</h3>
+                <h3 className='text-base font-semibold'>{ride?.pickup?.split(',')[0]}</h3>
                 <p className='text-gray-800 text-xs'>{ride?.pickup}</p>
               </div>
             </div>
             <div className='flex justify-start items-center gap-5 py-2 border-b-2'>
               <h5 className='text-lg'><i className="ri-square-fill"></i></h5>
               <div>
-                <h3 className='text-base font-semibold'>Third Wave Cofee </h3>
+                <h3 className='text-base font-semibold'>{ride?.destination?.split(',')[0]} </h3>
                 <p className='text-gray-800 text-xs'>{ride?.destination}</p>
               </div>
             </div>

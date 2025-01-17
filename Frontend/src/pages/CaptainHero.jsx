@@ -7,6 +7,8 @@ import gsap from "gsap"
 import ConfirmRidePopup from '../components/ConfirmRidePopup'
 import {CaptainDataContext} from "../context/CaptainContext"
 import {SocketContextProvider} from "../context/SocketContext"
+import LiveTracking from "../components/LiveTracking"
+import axios from 'axios'
 
 const CaptainHero = () => {
 const [ridePopup, setRidePopup] = useState(false)
@@ -55,7 +57,10 @@ useGSAP(()=>{
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
 
+       
+
           socket.emit('update-location-captain', {
+            
               userId: captain._id,
               location: {
                   ltd: position.coords.latitude,

@@ -1,14 +1,18 @@
 import React, { useState } from 'react'
 import { Link } from "react-router-dom"
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
+
 const ConfirmRidePopup = (props) => {
   const [OTP, setOTP] = useState('')
+  const navigate = useNavigate()
 
 const submitHandler =async (e) => {
   e.preventDefault()
   const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/rides/start-ride`, {
     params: {
         rideId: props.ride._id,
-        otp: otp
+        otp: OTP
     },
     headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -60,7 +64,7 @@ if (response.status === 200) {
    <div className='flex justify-start items-center gap-5 py-3 border-b-2'>
        <h5 className=' text-2xl'><i className="ri-map-pin-fill"></i></h5>
        <div className=''>
-           <h3 className='text-lg font-semibold'>562/1-A</h3>
+           <h3 className='text-lg font-semibold'>{props.ride?.pickup}</h3>
            <p className='text-gray-800 text-sm'>{props.ride?.pickup}</p>
 
        </div>
