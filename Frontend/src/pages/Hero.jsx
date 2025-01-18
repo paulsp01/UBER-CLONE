@@ -251,7 +251,7 @@ async function createRide() {
           </form>
           <button
             onClick={findTrip}
-            className='bg-indigo-800 text-white px-4 py-2 rounded-lg mt-3 w-full'>
+            className='bg-indigo-800 text-white px-4 py-2 rounded-lg mt-5 mb-4 w-full'>
                 Find Trip
           </button>
         </div>
