@@ -24,7 +24,7 @@ module.exports.createRide = async (req, res) => {
         
         ride.otp = ""
 
-        const rideWithUser = await rideModel.findOne({ _id: ride._id }).populate('user');
+        const rideWithUser = await rideModel.findOne({ _id: ride._id }).populate('user').populate('captain');
 
         captainsInRadius.map(captain => {
             
@@ -96,7 +96,7 @@ module.exports.startRide = async (req, res) => {
     try {
         const ride = await rideService.startRide({ rideId, otp, captain: req.captain });
 
-        console.log(ride);
+       
 
         sendMessageToSocketId(ride.user.socketId, {
             event: 'ride-started',
@@ -130,5 +130,5 @@ module.exports.endRide = async (req, res) => {
         return res.status(200).json(ride);
     } catch (err) {
         return res.status(500).json({ message: err.message });
-    } s
+    } 
 }
