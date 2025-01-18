@@ -31,7 +31,7 @@ const Riding = () => {
         <div className='flex items-center justify-between'>
           <img className='h-10' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrgwwulhOQCTSH_edb6mScPGpFkSRvOrGziQ&s" alt=""/>
           <div className='px-5 text-right'>
-            <h2 className='text-lg font-medium'>{ride?.captain.fullname.firstname}</h2>
+            <h2 className='text-lg font-medium capitalize'>{ride?.captain.fullname.firstname}</h2>
             <h4 className='text-xl font-semibold -mt-1 -mb-1'>{ride?.captain.vehicle.plate}</h4>
             <p className='text-base bg-indigo-300 pr-2 text-gray-800'>Maruti suzuki</p>
           </div>

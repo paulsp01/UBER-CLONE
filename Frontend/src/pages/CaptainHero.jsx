@@ -100,6 +100,7 @@ async function confirmRide() {
 
 setRidePopup(false)
 setconfirmridepopup(true)
+
 }
 
 
@@ -126,7 +127,7 @@ setconfirmridepopup(true)
       </div>
 
       <div ref={confirmridepopupRef} className='fixed w-full h-screen z-10 bottom-0 p-3 translate-y-full  bg-white py-10'>
-      <ConfirmRidePopup  ride={ride} setconfirmridepopup={setconfirmridepopup} setRidePopup={setRidePopup}/>
+      <ConfirmRidePopup  ride={ride}  confirmRide={confirmRide} setconfirmridepopup={setconfirmridepopup} setRidePopup={setRidePopup}/>
       </div>
     
   </div>

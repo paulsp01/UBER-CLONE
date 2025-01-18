@@ -51,14 +51,14 @@ const Hero = () => {
 
   socket.on('ride-confirmed', ride => {
 
-
+   
     setRidefound(false)
       setWaitingfordriver(true)
       setRide(ride)
   })
 
   socket.on('ride-started', ride => {
-      console.log("ride")
+      console.log("ride:", ride); // Debugging line
       setWaitingfordriver(false)
       navigate('/riding', { state: { ride } }) // Updated navigate to include ride data
   })
