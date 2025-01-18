@@ -6,6 +6,9 @@ const ConfirmRidePopup = (props) => {
     const [OTP, setOTP] = useState('')
     const navigate = useNavigate()
 
+
+   
+
     const submitHandler = async (e) => {
         e.preventDefault()
         const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/rides/start-ride`, {
@@ -19,9 +22,12 @@ const ConfirmRidePopup = (props) => {
         })
 
         if (response.status === 200) {
+          
+
             props.setconfirmridepopup(false)
             props.setRidePopup(false)
-            navigate('/captain-riding', { state: { ride: props.ride } }) // Ensure ride data is passed correctly
+           
+            navigate('/captain-riding', { state: { ride: props.ride, captain: props.captain } }) // Ensure ride and captain data are passed correctly
         }
     }
 
