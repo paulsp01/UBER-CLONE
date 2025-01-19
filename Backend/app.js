@@ -29,7 +29,7 @@ app.use("/captains",captainRoutes);
 app.use('/maps',mapRoutes)
 app.use("/rides",rideRoutes);
 
-app.use(express.static(path.join(__dirname,"/Frontend/dist")));
+app.use(express.static(path.join(__dirname,"../Frontend/dist")));
 app.get('*',(req,res)=>{
     res.sendFile(path.resolve(__dirname, "Frontend", "dist", "index.html"));
 }) 
