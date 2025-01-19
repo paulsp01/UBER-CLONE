@@ -53,7 +53,7 @@ const ConfirmedVehicle = (props) => {
         props.createRide()
 
       }}
-      className='w-1/2 py-2 bg-indigo-600 rounded-xl  font-semibold '>Confirm</button>
+      className='w-1/2 py-2 bg-indigo-600 rounded-xl mb-14  font-semibold '>Confirm</button>
       </div>
     </div>
 
