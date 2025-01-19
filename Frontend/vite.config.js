@@ -7,4 +7,8 @@ export default defineConfig({
   build: {
     chunkSizeWarningLimit: 2000, 
   },
+  server: {
+    host: '0.0.0.0', // Bind to all network interfaces
+    port: 5173, // Use Render's PORT or default to 5173
+  },
 })
