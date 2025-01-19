@@ -29,13 +29,10 @@ app.use("/captains",captainRoutes);
 app.use('/maps',mapRoutes)
 app.use("/rides",rideRoutes);
 
-app.use(express.static(path.join(__dirname,"../Frontend/dist")));
+app.use(express.static(path.join(__dirname,'public')));
 app.get('*',(req,res)=>{
-    res.sendFile(path.resolve(__dirname, "../Frontend", "dist", "index.html"));
+    res.sendFile(path.resolve(__dirname, 'public', 'dist','index.html'));
 }) 
 
-app.use(cors({
-    origin: " http://localhost:5173", 
-    credentials: true
-}));
+
 module.exports=app;
