@@ -50,6 +50,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         env:
           DEPLOY_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_URL:https://uber-clone-8.onrender.com
         run: |
           echo "$DEPLOY_KEY" > deploy_key.pem
           chmod 600 deploy_key.pem
@@ -113,10 +114,5 @@ jobs:
     
     steps:
       - name: Notify Status
-        run: |
-          echo "Add notification steps here"
-          # Example:
-          # - Send email notification
-          # - Send Slack notification
-          # - Update deployment status
+       
 
