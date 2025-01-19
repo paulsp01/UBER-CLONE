@@ -31,7 +31,7 @@ app.use("/rides",rideRoutes);
 
 app.use(express.static(path.join(__dirname,"../Frontend/dist")));
 app.get('*',(req,res)=>{
-    res.sendFile(path.resolve(__dirname, "Frontend", "dist", "index.html"));
+    res.sendFile(path.resolve(__dirname, "../Frontend", "dist", "index.html"));
 }) 
 
 app.use(cors({
