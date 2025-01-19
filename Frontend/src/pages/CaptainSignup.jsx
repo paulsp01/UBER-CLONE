@@ -33,11 +33,11 @@ const CaptainSignup = () => {
       }
     }
 
-    console.log("Submitting new captain:", newCaptain) // Debugging log
+ 
 
     try {
       const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/captains/register`, newCaptain)
-      console.log("Response from backend:", response) // Log response from backend
+     
       if (response.status === 201) {
         const data = response.data
         setCaptain(data.captain)

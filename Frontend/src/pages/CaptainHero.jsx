@@ -19,7 +19,7 @@ const [ ride, setRide ] = useState(null)
 
 const { socket } = useContext(SocketContextProvider)
 const { captain } = useContext(CaptainDataContext)
-console.log("captain from hero",captain)
+
 
 useGSAP(()=>{
   if(ridePopup) {
