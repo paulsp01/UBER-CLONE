@@ -9,7 +9,9 @@ Make the screen iPhone SE
 ![Screenshot (680)](https://github.com/user-attachments/assets/98ba1f82-69ea-410c-a6f5-ba242801dd68)
 ⚫You can login
 ![Screenshot (681)](https://github.com/user-attachments/assets/36f38c08-fe6a-4a71-983e-c12c54bcfe8a)
+⚫You can redirect to this page click find trip
 ![Screenshot (682)](https://github.com/user-attachments/assets/18690c6a-30a8-456f-bae2-002a4b53727e)
+⚫ select your pickup and destination location
 ![Screenshot (683)](https://github.com/user-attachments/assets/7d32bd94-6672-4703-9379-f3aa4fd8e4ea)
 ![Screenshot (684)](https://github.com/user-attachments/assets/6c6e67d1-3752-4a11-b525-0e80f4185e8e)
 ![Screenshot (685)](https://github.com/user-attachments/assets/04c49930-bb9d-494f-8360-c7048874f750)
