@@ -22,7 +22,9 @@ Make the screen iPhone SE
 ⚫sign in as a captain
 ![Screenshot (687)](https://github.com/user-attachments/assets/0110dcd2-f291-4cc4-814b-093955da27de)
 ![Screenshot (688)](https://github.com/user-attachments/assets/ecaa6a8e-55ca-4d48-bfa3-3d06db0a779a)
+⚫captain dashboard
 ![Screenshot (689)](https://github.com/user-attachments/assets/9a72ec46-f2f7-48c8-9f18-f66f0f73ff75)
+⚫when user confirm their ride a popup will be shown on captain dashboard this is the popup captain can accept or reject
 ![Screenshot (690)](https://github.com/user-attachments/assets/9a202454-6d0d-4d86-bbe8-b9f7f5bc21f5)
 ![Screenshot (691)](https://github.com/user-attachments/assets/cc0f1973-823a-40cc-9d7d-40156580009f)
 ![Screenshot (692)](https://github.com/user-attachments/assets/5880b8c5-7d70-4996-b146-396dc257ba6c)
