@@ -15,7 +15,9 @@ Make the screen iPhone SE
 ![Screenshot (683)](https://github.com/user-attachments/assets/7d32bd94-6672-4703-9379-f3aa4fd8e4ea)
 ⚫Choose any vehicle
 ![Screenshot (684)](https://github.com/user-attachments/assets/6c6e67d1-3752-4a11-b525-0e80f4185e8e)
+⚫confirm your ride
 ![Screenshot (685)](https://github.com/user-attachments/assets/04c49930-bb9d-494f-8360-c7048874f750)
+⚫sign in as a captain
 ![Screenshot (686)](https://github.com/user-attachments/assets/a3ef093d-8e30-4036-a1fe-fb700677cd15)
 ![Screenshot (687)](https://github.com/user-attachments/assets/0110dcd2-f291-4cc4-814b-093955da27de)
 ![Screenshot (688)](https://github.com/user-attachments/assets/ecaa6a8e-55ca-4d48-bfa3-3d06db0a779a)
