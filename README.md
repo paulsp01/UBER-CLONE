@@ -3,8 +3,9 @@ My Deployment Url=https://uber-clone-8.onrender.com
 
 
 Make the screen iPhone SE
-
+⚫first view
 ![Screenshot (679)](https://github.com/user-attachments/assets/299862f1-6dfc-4830-ab26-4ae108b4bc2a)
+⚫click continue
 ![Screenshot (680)](https://github.com/user-attachments/assets/98ba1f82-69ea-410c-a6f5-ba242801dd68)
 ![Screenshot (681)](https://github.com/user-attachments/assets/36f38c08-fe6a-4a71-983e-c12c54bcfe8a)
 ![Screenshot (682)](https://github.com/user-attachments/assets/18690c6a-30a8-456f-bae2-002a4b53727e)
