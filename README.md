@@ -32,5 +32,7 @@ Make the screen iPhone SE
 ![Screenshot (692)](https://github.com/user-attachments/assets/5880b8c5-7d70-4996-b146-396dc257ba6c)
 ⚫after that your ride will be started
 ![Screenshot (693)](https://github.com/user-attachments/assets/d6ab6582-751e-4ce3-8d68-ac3d3133a31c)
+v After that you pay your captain and captain will click make a payment button
 ![Screenshot (694)](https://github.com/user-attachments/assets/e92d50b9-b578-455c-8d34-bdc3e3d1f139)
+⚫after that finish ride
 ![Screenshot (695)](https://github.com/user-attachments/assets/97c7e5f6-d031-4468-b026-7a7ed3c06fe4)
