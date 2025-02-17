@@ -28,7 +28,9 @@ Make the screen iPhone SE
 ![Screenshot (690)](https://github.com/user-attachments/assets/9a202454-6d0d-4d86-bbe8-b9f7f5bc21f5)
 ⚫when captain click accept a popup will be shown on user side here captain details and ride details and OTP will be shown
 ![Screenshot (691)](https://github.com/user-attachments/assets/cc0f1973-823a-40cc-9d7d-40156580009f)
+⚫when you catch the ride then that otp share with your captain and captain write that otp to start your ride
 ![Screenshot (692)](https://github.com/user-attachments/assets/5880b8c5-7d70-4996-b146-396dc257ba6c)
+⚫after that your ride will be started
 ![Screenshot (693)](https://github.com/user-attachments/assets/d6ab6582-751e-4ce3-8d68-ac3d3133a31c)
 ![Screenshot (694)](https://github.com/user-attachments/assets/e92d50b9-b578-455c-8d34-bdc3e3d1f139)
 ![Screenshot (695)](https://github.com/user-attachments/assets/97c7e5f6-d031-4468-b026-7a7ed3c06fe4)
