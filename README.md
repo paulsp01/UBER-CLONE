@@ -26,6 +26,7 @@ Make the screen iPhone SE
 ![Screenshot (689)](https://github.com/user-attachments/assets/9a72ec46-f2f7-48c8-9f18-f66f0f73ff75)
 ⚫when user confirm their ride a popup will be shown on captain dashboard this is the popup captain can accept or reject
 ![Screenshot (690)](https://github.com/user-attachments/assets/9a202454-6d0d-4d86-bbe8-b9f7f5bc21f5)
+⚫when captain click accept a popup will be shown on user side here captain details and ride details and OTP will be shown
 ![Screenshot (691)](https://github.com/user-attachments/assets/cc0f1973-823a-40cc-9d7d-40156580009f)
 ![Screenshot (692)](https://github.com/user-attachments/assets/5880b8c5-7d70-4996-b146-396dc257ba6c)
 ![Screenshot (693)](https://github.com/user-attachments/assets/d6ab6582-751e-4ce3-8d68-ac3d3133a31c)
