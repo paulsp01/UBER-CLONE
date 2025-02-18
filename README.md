@@ -1,6 +1,24 @@
 # UBER-CLONE
 My Deployment Url=https://uber-clone-8.onrender.com
 
+Uber Clone project is a ride-hailing application that connects riders with drivers in real time, offering a seamless booking and tracking experience.
+
+Tech Stack & Features:
+
+Frontend: Built with React.js, using Context API  for state management.
+
+Backend: Developed with Node.js and MongoDB  to handle ride requests, user authentication, and payments.
+
+Real-Time Tracking: Implements Google Maps API  for live location tracking.
+
+Ride Matching: If Driver is available and near to the pickup then accept user ride
+
+WebSocket Integration: Enables real-time ride updates and status notifications.
+
+Best Practices: Secure authentication, optimized state handling, and a scalable architecture for smooth performance.
+
+This project replicates Uber’s core functionality, providing users with a fast and intuitive ride-booking experience.
+
 
 Make the screen iPhone SE
 ⚫first view click continue
